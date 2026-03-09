@@ -6,13 +6,14 @@ public class PalindromeCheckerApp {
 
         String word = "Never Odd Or Even";
 
-        PalindromeService service = new PalindromeService();
+        PalindromeStrategy strategy = new PalindromeSimpleStrategy();
+        // You can switch algorithm here
 
-        boolean result = service.checkPalindrome(word);
+        boolean result = strategy.isPalindrome(word);
 
-        if (result) {
+        if(result){
             System.out.println(word + " is a Palindrome");
-        } else {
+        }else{
             System.out.println(word + " is not a Palindrome");
         }
     }
