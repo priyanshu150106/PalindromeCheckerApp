@@ -4,21 +4,16 @@ public class PalindromeCheckerApp {
 
         System.out.println("Welcome to Palindrome Checker App");
 
-        String input = "Never Odd Or Even";
+        String word = "Never Odd Or Even";
 
-        // Convert to lowercase and remove spaces
-        String processed = input.toLowerCase().replaceAll("\\s+", "");
+        PalindromeService service = new PalindromeService();
 
-        String reversed = "";
+        boolean result = service.checkPalindrome(word);
 
-        for (int i = processed.length() - 1; i >= 0; i--) {
-            reversed = reversed + processed.charAt(i);
-        }
-
-        if (processed.equals(reversed)) {
-            System.out.println(input + " is a Palindrome");
+        if (result) {
+            System.out.println(word + " is a Palindrome");
         } else {
-            System.out.println(input + " is not a Palindrome");
+            System.out.println(word + " is not a Palindrome");
         }
     }
 }
